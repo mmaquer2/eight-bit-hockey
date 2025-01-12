@@ -5,7 +5,6 @@ A simple hockey game made with python and pygame.
 ### Project Setup
 
 ```bash
-
 bash scripts/setup.sh
 ```
 
@@ -23,7 +22,6 @@ pip install -r requirements.txt
 ```bash 
 bash scripts/run.sh
 ```
-
 or 
 
 ```bash

@@ -1,9 +1,7 @@
 from game import Game
 
-
-
 def main():
-    print("starting Eight Bit Hockey!!!")
+    print("Starting Eight Bit Hockey!!!")
     game = Game()
     game.run()
 
