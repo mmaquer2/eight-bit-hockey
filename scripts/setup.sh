@@ -3,8 +3,6 @@
 # Navigate to the 'src' directory
 cd src || { echo "Directory 'src' not found!"; exit 1; }
 
-ls
-
 # Create a virtual environment if it doesn't already exist
 if [ ! -d "venv" ]; then
     echo "Creating virtual environment..."

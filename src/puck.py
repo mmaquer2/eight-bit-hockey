@@ -5,10 +5,13 @@ class Puck:
         self.screen = window
         self.pos_x = start_x
         self.pos_y = start_y
+        
+        self.pos = pygame.Vector2()
         self.setup()
 
     def setup(self):
         pass
 
     def update(self):
-        pass
+        self.pos = pygame.Vector2(self.screen.get_width() / 2, self.screen.get_height() / 2)
+        pygame.draw.circle(self.screen, "black", self.pos, 5)

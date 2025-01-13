@@ -4,6 +4,7 @@ A simple hockey game made with python and pygame.
 
 ### Project Setup
 
+from the project root directory run the setup command to install the required dependencies.
 ```bash
 bash scripts/setup.sh
 ```
@@ -19,6 +20,7 @@ pip install -r requirements.txt
 
 ### Running the game
 
+from the project root directory run the run command to start the game.
 ```bash 
 bash scripts/run.sh
 ```
@@ -28,10 +30,12 @@ or
 python main.py
 ```
 
-### Game Modes:
- ~~ Work in Progress ~~
-
-
 ### Player Controls and Settings
 
-- Player 1: Arrow keys to move, Space to shoot
+- WASD to move 
+- Space to shoot
+- Command or Control to change player
+- Shift to Change player
+- P to pause
+- ESC to quit 
+

@@ -4,62 +4,51 @@ from puck import Puck
 
 
 class Rink:
-
     def __init__(self, screen):
+        self.screen = screen  # Store screen reference
         
-        # rink animation and layout vars
-        self.goal_one_location = 0
-        self.goal_two_location = 0
+        # Calculate center position for player start
+        start_x = screen.get_width() // 2
+        start_y = screen.get_height() // 2
         
-        # game state vars
+        # Initialize game state vars
         self.game_running = False
         self.a_team_score = 0
         self.b_team_score = 0
-
-        self.player = Player(screen, 5 , 5)
-
-        #self.setup() # execute game setup
-
+        
+        # Initialize teams and actors
+        self.team_a = []
+        self.team_b = []
+        self.actors = []
+        
+        # Create player at center
+        self.player = Player(screen, start_x, start_y)
+        self.actors.append(self.player)  # Add player to actors list
+        
+        # Rink layout vars
+        self.goal_one_location = 0
+        self.goal_two_location = 0
 
     def setup(self):
-
-        # setup the rink 
-        
-        # TODO:
-        # Team Benches
-        # Crowd and Background
-        # Scoreboard 
-        
-
-
-        # setup scoreboard
-
-        # setup player 1
-
-        # setup puck
-
-        # setup team a
-
-        # setup team b
-
-        
+        # Your existing setup code...
         pass
 
-        
     def start(self):
         self.game_running = True
 
-        # trigger first puck drop
-        # start_puck_drop()
-
     def run(self):
-        
         while self.game_running:
             self.update()
-            print("Update Game Actions")
 
-    def update(self):
-        
-        self.player.update()
-
-
+    def update(self, dt):
+        # Update all actors
+        for actor in self.actors:
+            actor.update(dt)
+            
+        # Draw all actors
+        self.draw()
+    
+    def draw(self):
+        # Draw all actors
+        for actor in self.actors:
+            actor.draw()
