@@ -39,3 +39,8 @@ python main.py
 - P to pause
 - ESC to quit 
 
+### Usage 
+
+- The game is a simple hockey game where you can control the player and shoot the puck into the goal.
+
+### License

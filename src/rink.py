@@ -5,7 +5,7 @@ from puck import Puck
 
 class Rink:
     def __init__(self, screen):
-        self.screen = screen  # Store screen reference
+        self.screen = screen  
         
         # Calculate center position for player start
         start_x = screen.get_width() // 2
