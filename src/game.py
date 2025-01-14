@@ -131,19 +131,25 @@ class Game:
 
     def update(self, dt):
         """Update game logic"""
-        # Update player and puck
+        # update player movement and puck possession
         self.player.move(dt)
         self.puck.update(dt)
         
         # Basic puck possession
-        if self.player_can_get_puck():
-            self.player.has_puck = True
-            self.puck.pos = self.player.pos
+        if self.player.has_puck:
+            self.puck.pos = self.player.pos + pygame.math.Vector2(0, 10)
+        else:
+            
+            if self.player_can_get_puck():
+                self.player.has_puck = True   
+     
 
     def player_can_get_puck(self):
         """Check if player is close enough to get puck"""
-        distance = (self.player.pos - self.puck.pos).length()
-        return distance < 20  # Adjust this value as needed
+        if not self.player.has_puck:
+            distance = (self.player.pos - self.puck.pos).length()
+            return distance < 20  
+        return False
 
     def draw(self):
         """Draw everything"""
@@ -193,7 +199,7 @@ class Game:
                 self.puck.velocity = pygame.math.Vector2(0, 0)
             
             # Add shooting velocity
-            shoot_speed = 500  # Adjust this value for shot power
+            shoot_speed = 500  # shot power
             self.puck.velocity += shoot_direction * shoot_speed
             
     def draw_rink(self):
